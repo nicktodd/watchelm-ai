@@ -2,9 +2,14 @@ Run the docker image using the nvidia card
 
 1. docker run -d -p 3001:3001 mintplexlabs/anythingllm
 
-2. docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama
+2. docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
 
+3. Use exec to log into the ollama container and run the following command:
 
+```
+ollama pull phi3-mini
+ollama pull all-minilm
+```
 
 Visit http://localhost:3001
 

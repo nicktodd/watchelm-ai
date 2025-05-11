@@ -7,9 +7,11 @@ RUN ollama pull gemma3:12b-it-qat
 
 # used for reasoning (shows it's reasoning as well as doing the inference)
 # this did not work well for course outlines as it kept referring to courses elsewhere
-RUN ollama pull phi4-mini-reasoning
+# RUN ollama pull phi4-mini-reasoning
 
 
 # used for embedding
-RUN ollama pull all-minilm 
-
+# RUN ollama pull all-minilm 
+RUN ollama pull nomic-embed-text
+# Alternative embedding models if needed
+# RUN ollama pull mxbai-embed-large
