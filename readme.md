@@ -2,6 +2,8 @@
 This exercise is designed to help demystify the world of Generative AI for technologists by
 giving you a step by step guide to building and deploying a GenerativeAI application from scratch - all on a single computer running nothing but Docker.
 
+The scenario is that you are a training company and you want customers to be able to ask questions about your courses. You want to ensure that the answers don't go off suggesting competitor courses, but the user can ask about the courses that you offer.
+
 
 The pre-requisites for this exercise are that you have access to a machine with Docker installed, and that also has a 'decent' GPU. I haven't tested what 'decent' means, but I have had it working on 3 different machines - a Surface book, a desktop computer, and an AWS EC2 GPU instance.
 
