@@ -1,6 +1,9 @@
 Run the docker image using the nvidia card
 
-1. docker run -d -p 3001:3001 mintplexlabs/anythingllm
+1. docker run -d -p 3001:3001 mintplexlabs/anythingllm:1.8.1
+
+Note the version number was needed when 1.8.2 was not working. 13/5/25
+
 
 2. docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
 
