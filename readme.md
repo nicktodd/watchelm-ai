@@ -7,7 +7,7 @@ Run the docker image using the nvidia card
 3. Use exec to log into the ollama container and run the following command:
 
 ```
-ollama pull phi3-mini
+ollama pull phi3:mini
 ollama pull all-minilm
 ```
 
