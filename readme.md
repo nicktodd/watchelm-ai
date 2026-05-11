@@ -60,7 +60,7 @@ docker log YOUR_CONTAINER_ID
 
 
 ```
-docker exec –it CONTAINER_ID /bin/bash
+docker exec -it CONTAINER_ID /bin/bash
 
 
 ollama pull phi3:mini
@@ -97,6 +97,8 @@ We don't want our queries to involve the Internet, so we will turn this off for 
 
 1. Using the spanner in the bottom left, navigate to **Settings**. Then select **Agent Skills**. Deselect the option for **Web Scraping** and **Web Search**.
 
+2. At the top right corner of your screen, select **Save** to save your changes.
+
 2. Now click the **Back** icon button at the bottom left of the screen.
 
 
@@ -122,11 +124,14 @@ The chunking will be important to chunk courses based on the XML tags or each fi
 
 Note that the AnythingLLM UI has only basic options for chunking. The actual LLM does have more sophisticated options (such as at XML tags for example). 
 
-^To sort the chunk sizes you can edit /app/server/utils/TextSplitter/index.js and then find the class called the RecursiveSplitter. In the class, modify the constructor to have a separators default argument which is a string array of splitters, so in my case, it could be separators such as: ['</course>', '\n\n', '\n', ' ']. You might also remove all the other XML tags in some other function.^
+> [!NOTE]
+> To tune chunking behavior, edit `/app/server/utils/TextSplitter/index.js` and find the `RecursiveSplitter` class.
+> In the constructor, set a default `separators` string array, for example: `['</course>', '\n\n', '\n', ' ']`.
+> You may also remove other XML tags in the related preprocessing function.
 
 8. Click **Save changes**.
 
-9. Now on the left menu, select **Text Splitter and Chunking**. The chunk size cannot be larger than the splitter size. You can leave the default values for now. In a real application, you would be experimenting with different values here - a bit like the chunking.
+9. Now on the left menu, select **Text Splitter and Chunking**. The chunk size cannot be larger than the splitter size. Change the chunk size to 300 and leave the overlap at 20. Save your changes.
 
 10. Use the bottom left back arrow to go back to the workspace.
 
